@@ -156,4 +156,60 @@
             <a href="https://7.WenTianPlay.com" class="portal-button">
                 <span class="sparkle">⭐</span>
                 下一页の探险之旅
-                <span class="spa
+                                <span class="sparkle">✨</span>
+            </a>
+            <div class="portal-glow"></div>
+        </div>
+
+        <div class="copyright">
+            © 2024 祖帝日记<br>
+            本网站与<a href="https://WenTianPlay.com">文天玩WenTianPlay</a>无任何所属关系<br>
+            文天玩仅提供二级域名分发
+        </div>
+    </div>
+
+    <div class="decorative" style="top:10%;left:5%">🍭</div>
+    <div class="decorative" style="top:30%;right:8%">🎀</div>
+    <div class="decorative" style="top:70%;left:15%">🐾</div>
+
+    <script>
+        // 安全保护与功能优化
+        (function() {
+            'use strict';
+
+            // 安全事件处理器
+            const securityHandler = (e) => {
+                const forbiddenKeys = new Set(['F12', 'I', 'U', 'c', 'C']);
+                const isDevToolsShortcut = (e.ctrlKey && e.shiftKey && forbiddenKeys.has(e.key)) ||
+                                         (e.ctrlKey && forbiddenKeys.has(e.key)) ||
+                                         e.key === 'F12';
+
+                if (isDevToolsShortcut) {
+                    e.preventDefault();
+                    return false;
+                }
+            };
+
+            // 事件监听器注册
+            const addEvent = (type, handler) => {
+                document.addEventListener(type, handler, { passive: false });
+            };
+
+            // 初始化安全保护
+            addEvent('keydown', securityHandler);
+            addEvent('contextmenu', (e) => e.preventDefault());
+            addEvent('copy', (e) => e.preventDefault());
+            addEvent('cut', (e) => e.preventDefault());
+
+            // 渐进增强功能
+            try {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw.js');
+                }
+            } catch (error) {
+                console.log('Service Worker 注册失败:', error);
+            }
+        })();
+    </script>
+</body>
+</html>
